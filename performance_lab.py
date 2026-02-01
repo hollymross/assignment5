@@ -29,8 +29,17 @@ Time and Space Analysis for problem 1:
 # Output: [4, 5, 6, 7]
 
 def remove_duplicates(nums):
-    # Your code here
-    pass
+    dupe = set()
+    numbers = []
+    for num in nums:
+        if num not in dupe:
+            dupe.add(num)
+            numbers.append(num)
+
+
+    return numbers
+
+print(remove_duplicates([4,5,4,6,5,7]))
 
 """
 Time and Space Analysis for problem 2:
