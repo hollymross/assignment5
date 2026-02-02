@@ -7,17 +7,29 @@
 # Output: 3
 
 def most_frequent(numbers):
-    # Your code here
-    pass
+    count = {}
+
+    for num in numbers:
+        count[num] = count.get(num,0) + 1
+
+    max = 0
+    most_common = None
+
+    for num, count in count.items():
+        if count > max:
+            max = count
+            most_common = num
+    
+    return most_common
 
 """
 Time and Space Analysis for problem 1:
-- Best-case:
-- Worst-case:
-- Average-case:
-- Space complexity:
-- Why this approach?
-- Could it be optimized?
+- Best-case: O(n)
+- Worst-case:O(n)
+- Average-case:O(n)
+- Space complexity: O(n)
+- Why this approach? This approach is the best because it avoids nested loops and used a dictionary for clean lookups
+- Could it be optimized? No
 """
 
 
@@ -43,12 +55,12 @@ print(remove_duplicates([4,5,4,6,5,7]))
 
 """
 Time and Space Analysis for problem 2:
-- Best-case:
-- Worst-case:
-- Average-case:
-- Space complexity:
-- Why this approach?
-- Could it be optimized?
+- Best-case: O(n)
+- Worst-case: O(n)
+- Average-case: O(n)
+- Space complexity: O(n)
+- Why this approach? This approach keeps the original order of the numbers that are put in and avoids any nested loops
+- Could it be optimized? No
 """
 
 
@@ -61,17 +73,27 @@ Time and Space Analysis for problem 2:
 # Output: [(1, 4), (2, 3)]
 
 def find_pairs(nums, target):
-    # Your code here
-    pass
+    seen = set()
+    pairs = []
+
+    for num in nums:
+        complement = target - num
+
+        if complement in seen:
+            pairs.append((complement, num))
+
+        seen.add(num)
+    
+    return pairs
 
 """
 Time and Space Analysis for problem 3:
-- Best-case:
-- Worst-case:
-- Average-case:
-- Space complexity:
-- Why this approach?
-- Could it be optimized?
+- Best-case: O(n)
+- Worst-case: O(n)
+- Average-case: O(n)
+- Space complexity: O(n)
+- Why this approach? 
+- Could it be optimized? No
 """
 
 
@@ -107,15 +129,21 @@ Time and Space Analysis for problem 4:
 # Because: [1, 1+2, 1+2+3, 1+2+3+4]
 
 def running_total(nums):
-    # Your code here
-    pass
+    total = []
+    sum = 0
+
+    for num in nums:
+        sum = sum + num
+        total.append(sum)
+    
+    return total
 
 """
 Time and Space Analysis for problem 5:
-- Best-case:
-- Worst-case:
-- Average-case:
-- Space complexity:
+- Best-case: O(n)
+- Worst-case: O(n)
+- Average-case: O(n)
+- Space complexity: O(n)
 - Why this approach?
-- Could it be optimized?
+- Could it be optimized? No
 """
